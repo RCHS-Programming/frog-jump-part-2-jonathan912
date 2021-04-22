@@ -37,6 +37,15 @@ public class FrogWorld extends World
             addObject( new Ground(), 10 + 60*i, 510);
         }
         
+        for(int i = 0; i < 14; i++)
+        {
+            addObject( new Ground(), 10 + 60*i, 270);
+        }
+        
+        for(int i = 0; i < 14; i++)
+        {
+            addObject( new Ground(), 10 + 60*i, 30);
+        }
         //Add random grass
         for(int i = 0; i < 10; i++)
         {
@@ -44,7 +53,13 @@ public class FrogWorld extends World
             int y = Greenfoot.getRandomNumber(100) + 500; 
             addObject( new Grass(), x, y);
         }
-        
+        for(int i = 0; i<4; i++)
+        {
+            int x = Greenfoot.getRandomNumber(700) + 50;
+            int y = Greenfoot.getRandomNumber(25) + 250;
+            addObject(new Grass(), x,y);
+        }
+
         //Add another safe Ground zone, y = 270
         
         
@@ -59,29 +74,29 @@ public class FrogWorld extends World
     public void addCars()
     {
         //first row of Cars, all y = 450, speed of 5
-        
-        
+        addObject(new Car(5), 30, 450);
+        addObject(new Car(5), 230, 450); 
         //second row of Cars, all y = 390, speed of 5
-        
-        
+        addObject(new Car(5), 110, 390);
+        addObject(new Car(5), 500, 390);
         //third row of Cars, all y = 330, speed of 7
-        
-        
+        addObject(new Car(7), 660, 330);
+        addObject(new Car(7), 420, 330);
     }
     
     public void addTrucks()
     {
         //first row of Trucks, all y = 210, speed of -8
-
-
+        addObject(new Truck(-8), 330, 210);
+        addObject(new Truck(-8), 240, 210);
 
         //second row of Trucks, all y = 150, speed of -8
+        addObject(new Truck(-8), 600, 150);
+        addObject(new Truck(-8), 90, 150);
 
-
-
-        //third row of Trucks, all y = 90, speed of 10
-        
-        
+        //third row of Trucks, all y = 90, speed of -10
+        addObject(new Truck(-10), 400, 90);
+        addObject(new Truck(-10), 721, 90);
         
     }
 }
